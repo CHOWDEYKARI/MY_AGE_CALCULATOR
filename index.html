@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Age Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(45deg, #FF5733, #33FFBD, #FF33F6, #337BFF);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .card-header {
+            font-family: 'Lobster', cursive;
+            background-color: #4CAF50;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        #exactAge {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        #runningTime ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #runningTime li {
+            padding: 5px;
+            font-size: 1.2rem;
+        }
+
+        .blinking-border {
+            border: 5px solid #FF5733;
+            animation: blinkBorder 1s infinite alternate;
+        }
+
+        @keyframes blinkBorder {
+            0% { border-color: #FF5733; }
+            50% { border-color: #33FFBD; }
+            100% { border-color: #337BFF; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header text-center">
+                    <h3>Advanced Age Calculator</h3>
+                </div>
+                <div class="card-body">
+                    <!-- Start button to trigger welcome message -->
+                    <button id="startButton" class="btn btn-primary w-100 mb-3">Start & Hear Welcome Message</button>
+
+                    <form id="ageForm">
+                        <div class="form-group mb-3">
+                            <label for="dob">Enter Your Date of Birth</label>
+                            <input type="date" class="form-control" id="dob" required>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Calculate Age</button>
+                    </form>
+                    <div class="mt-3 blinking-border">
+                        <h5 id="exactAge" class="text-center"></h5>
+                        <div id="runningTime" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function to speak a given message using Web Speech API
+    function speakText(text) {
+        if ('speechSynthesis' in window) {
+            const speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            speech.lang = 'en-US';
+            speech.rate = 1;
+            window.speechSynthesis.speak(speech);
+        } else {
+            console.error("Web Speech API not supported in this browser.");
+        }
+    }
+
+    // Event listener to trigger speech after button click
+    document.getElementById('startButton').addEventListener('click', function() {
+        speakText("Welcome to MAHESHWER_CHOWDEYKARI'S CODING, PLEASE ENTER YOUR CORRECT AGE");
+        document.getElementById('startButton').disabled = true;  // Disable the button after one use
+    });
+
+    // Calculate and display the age
+    function calculateAge(dob) {
+        const now = new Date();
+        const birthDate = new Date(dob);
+        
+        // Exact age calculation in years, months, and days
+        let years = now.getFullYear() - birthDate.getFullYear();
+        let months = now.getMonth() - birthDate.getMonth();
+        let days = now.getDate() - birthDate.getDate();
+
+        if (days < 0) {
+            months--;
+            days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+        }
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        // Difference in milliseconds
+        const ageDiffMs = now - birthDate;
+
+        // Time calculations
+        const milliseconds = ageDiffMs;
+        const seconds = Math.floor(milliseconds / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        const daysTotal = Math.floor(hours / 24);
+        const weeks = Math.floor(daysTotal / 7);
+        const monthsTotal = Math.floor(daysTotal / 30.44);  // Average month length
+        const yearsTotal = Math.floor(daysTotal / 365.25);
+
+        // Update exact age and running time
+        document.getElementById('exactAge').innerText = `Exact Age: ${years} years, ${months} months, and ${days} days.`;
+        document.getElementById('runningTime').innerHTML = `
+            <ul class="list-group">
+                <li class="list-group-item">Milliseconds: ${milliseconds}</li>
+                <li class="list-group-item">Seconds: ${seconds}</li>
+                <li class="list-group-item">Minutes: ${minutes}</li>
+                <li class="list-group-item">Hours: ${hours}</li>
+                <li class="list-group-item">Days: ${daysTotal}</li>
+                <li class="list-group-item">Weeks: ${weeks}</li>
+                <li class="list-group-item">Months: ${monthsTotal}</li>
+                <li class="list-group-item">Years: ${yearsTotal}</li>
+            </ul>
+        `;
+
+        // Speak out the exact age using Web Speech API
+        speakText(`You are ${years} years, ${months} months, and ${days} days old.`);
+    }
+
+    // Event listener for the form submission
+    document.getElementById('ageForm').addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent form from reloading the page
+
+        const dob = document.getElementById('dob').value;
+        if (dob) {
+            // Start the real-time update
+            setInterval(function() {
+                calculateAge(dob);
+            }, 100);  // Update every 100 milliseconds (10 updates per second)
+        }
+    });
+</script>
+
+</body>
+</html>
