@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup and Login Pages</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            animation: changeBackground 30s linear infinite;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #ffd700;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            font-size: 16px;
+            background: #fff;
+            color: #333;
+        }
+
+        .error {
+            border-color: red;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #ff6f61, #d63e75);
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #d63e75, #ff6f61);
+            transform: scale(1.05);
+        }
+
+        .toggle-btn {
+            background: none;
+            color: #ffd700;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 15px;
+            display: block;
+            transition: color 1s ease;
+        }
+
+        .toggle-btn:hover {
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes changeBackground {
+            0% {
+                background-image: url('./s1.gif');
+            }
+
+            10% {
+                background-image: url('./s2.gif');
+            }
+
+            20% {
+                background-image: url('./s3.gif');
+            }
+
+            30% {
+                background-image: url('./s4.gif');
+            }
+
+            40% {
+                background-image: url('./s5.gif');
+            }
+
+            50% {
+                background-image: url('./s6.gif');
+            }
+
+            60% {
+                background-image: url('./s7.gif');
+            }
+
+            70% {
+                background-image: url('./s8.gif');
+            }
+
+            80% {
+                background-image: url('./s9.gif');
+            }
+
+            90% {
+                background-image: url('./s10.gif');
+            }
+
+            100% {
+                background-image: url('./s11.gif');
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+
+        input:focus {
+            border-color: #ff6f61;
+            outline: none;
+            box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+        }
+
+        #navbar {
+            position: fixed;
+            top: 0;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+            color: green;
+            font-size: 16px;
+            display: none;
+            /* Initially hidden */
+        }
+
+        /* Tooltip styling */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 160px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            /* Position tooltip above the element */
+            left: 50%;
+            margin-left: -80px;
+            /* Center the tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 12px;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+
+        /*the end tooltip*/
+
+        #formTitle {
+            text-align: center;
+            /* Centers the text within the h1 element */
+            margin: 0 auto;
+            /* Centers the h1 element itself horizontally if it's a block-level element */
+            display: block;
+            /* Ensures the h1 is treated as a block-level element */
+        }
+
+        /*START USER WARNING */
+        /* CSS for blinking effect */
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Apply blinking effect to the warning message */
+        .blinking-warning {
+            color: red;
+            font-size: 40px;
+            animation: blink 1s infinite;
+            /* Blinking every 1 second */
+        }
+
+        /*THE END USER WARNING*/
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar"></div> <!-- Navbar to display username -->
+
+    <!-- Signup Form -->
+    <div id="signupForm" class="container">
+        <h1 id="formTitle" class="tooltip">Signup</h1>
+        </h1></br></br>
+        <div class="tooltip">
+            <input type="text" id="signupUsername" placeholder="Username" required>
+            <span class="tooltiptext">Please enter Name with Surname </span>
+        </div></br></br>
+        <div class="tooltip">
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <span class="tooltiptext">Password should be 8-18 characters with a mix of letters, numbers, and
+                symbols</span>
+        </div></br></br>
+        <div class="tooltip">
+            <input type="email" id="signupEmail" placeholder="Email" required>
+            <span class="tooltiptext">Enter a valid email address</span>
+        </div></br></br>
+        <div class="tooltip">
+            <button id="voice_Output_speakButtonSignup" class="voice_Output_button">Signup</button>
+            <span class="tooltiptext">Click to sign up</span>
+        </div></br></br>
+        <div class="tooltip">
+            <button class="toggle-btn" onclick="toggleForm()">Already have an account? Login</button>
+            <span class="tooltiptext">Switch to login form</span>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" class="container" style="display:none;">
+        <h1 id="formTitle" class="tooltip">Login
+            <span class="tooltiptext">Enter your credentials to log in</span>
+        </h1></br></br>
+        <div class="tooltip">
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <span class="tooltiptext">Enter your registered username</span>
+        </div></br></br>
+        <div class="tooltip">
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <span class="tooltiptext">Enter your password</span>
+        </div></br></br>
+        <div class="tooltip">
+            <button id="voice_Output_speakButtonLogin" class="voice_Output_button">Login</button>
+            <span class="tooltiptext">Click to log in</span>
+        </div></br></br>
+        <div class="tooltip">
+            <button class="toggle-btn" onclick="toggleForm()">Don't have an account? Signup</button>
+            <span class="tooltiptext">Switch to signup form</span>
+        </div>
+    </div>
+
+    <!--START USER WARNING  -->
+    <script>
+        // Check if the browser supports the Web Speech API
+        if ('webkitSpeechRecognition' in window) {
+            // Create a new instance of SpeechRecognition
+            var recognition = new webkitSpeechRecognition();
+
+            // Set some recognition properties
+            recognition.continuous = true; // Allows continuous speech recognition
+            recognition.interimResults = false; // Only final results are processed
+            recognition.lang = 'en-US'; // Set the language
+
+            // Function that gets called when speech recognition starts
+            recognition.onstart = function () {
+                // Display a blinking warning message when recognition starts
+                document.getElementById('speech-warning').innerHTML =
+                    '<span class="blinking-warning">&#9888; Warning: YOU ARE UNDER CCTV SURVEILLANCE!</span>';
+            };
+
+            // Function that gets called when speech recognition ends
+            recognition.onend = function () {
+                // Clear the warning message when recognition ends
+                document.getElementById('speech-warning').innerHTML = '';
+            };
+
+            // Function that gets called when a result is returned
+            recognition.onresult = function (event) {
+                var transcript = event.results[event.resultIndex][0].transcript;
+                document.getElementById('result').textContent = 'You said: ' + transcript;
+            };
+
+            // Start the recognition
+            recognition.start();
+        } else {
+            alert('Sorry, your browser does not support the Web Speech API.');
+        }
+    </script>
+
+    <!-- Display the speech warning and the result -->
+    <div id="speech-warning"></div>
+    <div id="result"></div>
+    <!--THE END USER WARNING  -->
+
+
+    <!-- START CC TV -->
+    <script>
+        // Voice Output for CCTV Surveillance Warning
+        document.getElementById('signupUsername').addEventListener('input', () => {
+            const message = "WELCOME TO WASTE MANAGEMENT WITH IOT SYSTEM, IT HUB NIZAMABAD.";
+            const utterance = new SpeechSynthesisUtterance(message);
+            window.speechSynthesis.speak(utterance);
+        });
+
+        // Existing code for signup and login functionalities remains unchanged
+        // ...
+    </script>
+
+    <!-- THE END CC TV -->
+
+
+    <!--START SIGNUP SUCCESS SMS  -->
+    <script>
+        // Function to trigger Web Speech API and show message
+        function handleSignup(isSuccess) {
+            let message = '';
+
+            // Determine the message based on success or failure
+            if (isSuccess) {
+                message = "CONGRATULATIONS YOU ARE SUCCESSFULLY SIGNED UP IN WASTE MANAGEMENT SYSTEM";
+            } else {
+                message = "SORRY YOU ENTERED WRONG DETAILS, PLEASE TRY AGAIN LATER, THANK YOU";
+            }
+
+            // Display the message in the container
+            document.getElementById('signup-message').innerHTML = message;
+            document.getElementById('signup-message').style.display = 'block';
+
+            // Web Speech API part - Speak the message
+            let speech = new SpeechSynthesisUtterance(message);
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+
+    <!-- Message container (initially hidden) -->
+    <div id="signup-message"
+        style="display: none; border: 2px solid blue; background-color: silver; color: red; padding: 10px; margin-top: 10px;">
+    </div>
+
+
+    <!-- THE END SIGNUP SMS -->
+    <script>
+        // Voice Output for Signup Button
+        document.getElementById('voice_Output_speakButtonSignup').addEventListener('click', () => {
+            signup();
+        });
+
+        // Voice Output for Login Button
+        document.getElementById('voice_Output_speakButtonLogin').addEventListener('click', () => {
+            login();
+        });
+
+        function validatePassword(password) {
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!])[A-Za-z\d@#$%^&*!]{8,18}$/;
+            return passwordRegex.test(password);
+        }
+
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function signup() {
+            const username = document.getElementById('signupUsername').value;
+            const password = document.getElementById('signupPassword').value;
+            const email = document.getElementById('signupEmail').value;
+
+            let isValid = true;
+
+            if (!validatePassword(password)) {
+                document.getElementById('signupPassword').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('signupPassword').classList.remove('error');
+            }
+
+            if (!validateEmail(email)) {
+                document.getElementById('signupEmail').classList.add('error');
+                isValid = false;
+            } else {
+                document.getElementById('signupEmail').classList.remove('error');
+            }
+
+            if (isValid && username) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+                localStorage.setItem('email', email);
+
+                const text = 'CONGRATULATIONS YOU ARE SUCCESSFULLY SIGNED UP.';
+                const utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+
+                alert('Signup successful! Please login.');
+                // Switch to login form
+                document.getElementById('signupForm').style.display = 'none';
+                document.getElementById('loginForm').style.display = 'block';
+            } else {
+                const text = 'PLEASE ENTER A STRONG PASSWORD, VALID EMAIL, AND USERNAME.';
+                const utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+
+                alert('Please fill out all fields correctly.');
+            }
+        }
+
+        function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            if (username === storedUsername && password === storedPassword) {
+                const text = 'WELCOME BACK TO WASTE MANAGEMENT SYSTEM LOGIN SUCCESSFULLY.';
+                const utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+
+                alert('Congratulations you are Successfully created signup credentials');
+
+                // Redirect to base.html
+                window.location.href = 'home.html';
+
+                // After redirection, handle username display on the new page
+                // This part should be included in base.html
+            } else {
+                const text = 'PLEASE ENTER CORRECT USERNAME OR PASSWORD.';
+                const utterance = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(utterance);
+
+                alert('Sorry you are entered Incorrect username or password, Please enter Correct login credentials ok naa.');
+            }
+        }
+
+        function toggleForm() {
+            const signupForm = document.getElementById('signupForm');
+            const loginForm = document.getElementById('loginForm');
+
+            if (signupForm.style.display === 'none') {
+                signupForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            } else {
+                signupForm.style.display = 'none';
+                loginForm.style.display = 'block';
+            }
+        }
+
+        function sendEmailConfirmation(email) {
+            console.log(`Sending confirmation email to ${email}`);
+            // Placeholder function to simulate email sending
+        }
+
+        function sendMobileOTP() {
+            console.log('Sending mobile OTP');
+            // Placeholder function to simulate OTP sending
+        }
+    </script>
+
+</body>
+
+</html>

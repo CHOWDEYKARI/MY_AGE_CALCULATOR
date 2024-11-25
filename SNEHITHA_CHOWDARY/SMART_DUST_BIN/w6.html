@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Width Carousel</title>
+    <style>
+        /* Basic Page Setup */
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282828;
+            overflow: hidden;
+        }
+
+        /* Outer Container for Carousel */
+        .outer-container {
+            width: 100%;
+            height: 80vh; /* Adjusted height for responsiveness */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(45deg, #FF758C, #825CFF, #1F1F1F);
+            background-size: 400% 400%;
+            animation: backgroundShift 10s ease infinite, blinkingBgColors 3s linear infinite;
+        }
+
+        /* Carousel Styling */
+        .carousel {
+            width: 95%; /* Increased width to occupy more space */
+            max-width: 1400px;
+            height: 80%; /* Adjusted height to fit images */
+            overflow: hidden;
+            position: relative;
+            border-radius: 20px;
+            background: linear-gradient(#333, #444);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            animation: blinkingBorderColors 2s linear infinite;
+        }
+
+        .wrap {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr; /* Ensures items span available space */
+            gap: 20px; /* Adds spacing between images */
+            animation: slide 15s linear infinite;
+        }
+
+        /* Carousel Images */
+        .wrap img {
+            width: 90%; /* Scales images to fit within container */
+            height: auto; /* Maintains aspect ratio */
+            max-height: 100%; /* Ensures images don't exceed container height */
+            border-radius: 20px;
+            object-fit: cover;
+            margin: 0 auto;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            animation: blinkingBorderColors 2s linear infinite;
+        }
+
+        .wrap img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(255, 255, 255, 0.8), 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animations */
+        @keyframes slide {
+            to {
+                transform: translateX(-1200px);
+            }
+        }
+
+        @keyframes backgroundShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes blinkingBgColors {
+            0% {
+                background-color: rgb(255, 0, 0);
+            }
+            25% {
+                background-color: rgb(0, 255, 0);
+            }
+            50% {
+                background-color: rgb(0, 0, 255);
+            }
+            75% {
+                background-color: rgb(255, 255, 0);
+            }
+            100% {
+                background-color: rgb(255, 0, 255);
+            }
+        }
+
+        @keyframes blinkingBorderColors {
+            0% {
+                border: 5px solid rgb(255, 0, 0);
+            }
+            25% {
+                border: 5px solid rgb(0, 255, 0);
+            }
+            50% {
+                border: 5px solid rgb(0, 0, 255);
+            }
+            75% {
+                border: 5px solid rgb(255, 255, 0);
+            }
+            100% {
+                border: 5px solid rgb(255, 0, 255);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-container">
+        <div class="carousel">
+            <div class="wrap">
+                <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-1.jpg" alt="">
+                <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-2.jpg" alt="">
+                <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-3.jpg" alt="">
+                <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-4.jpg" alt="">
+                <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-1.jpg" alt="">
+                <img src="https://www.codewithfaraz.com/img/code%20with%20Faraz-2.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

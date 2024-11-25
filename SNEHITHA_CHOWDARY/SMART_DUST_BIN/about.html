@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <title>About_Us</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* start about us css */
+       /* Base Styles */
+               body {
+                   font-family: Arial, sans-serif;
+                   margin: 0;
+                   padding: 0;
+                   background-color: #e0f7fa; /* Light cyan background */
+                   color: #333;
+               }
+               /* Container for central content */
+               .container {
+                   width: 90%;
+                   margin: 0 auto; /* Center the container */
+                   padding: 20px;
+                   max-width: 1200px; /* Maximum width for larger screens */
+               }
+       
+               /* Main header styling */
+               h1 {
+                   text-align: center;
+                   font-size: 2.5em;
+                   color: #4a90e2; /* Blue color for the title */
+                   text-decoration: underline;
+                   margin-bottom: 20px;
+                   animation: fadeInDown 1s ease-out; /* Animation for the header */
+               }
+       
+               /* Sub-header (h2) and minor header (h3) styling */
+               h2, h3 {
+                   animation: slideInLeft 1.2s ease-out; /* Slide-in animation */
+                   font-weight: bold;
+               }
+               h2 {
+                   font-size: 1.8em;
+                   margin-top: 20px;
+                   padding: 5px;
+               }
+               h3 {
+                   font-size: 1.4em;
+                   margin-bottom: 10px;
+                   padding: 5px;
+               }
+       
+               /* Paragraph styling */
+               p {
+                   line-height: 1.6;
+                   animation: fadeIn 1.5s ease-out; /* Fade-in animation */
+               }
+       
+               /* Section styling with hover effect */
+               .section {
+                   padding: 20px;
+                   margin-bottom: 20px;
+                   border-radius: 8px;
+                   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Shadow for section box */
+                   transform: scale(0.98);
+                   transition: transform 0.3s;
+               }
+               .section:hover {
+                   transform: scale(1); /* Slight scale-up on hover */
+               }
+       
+               /* Unique background colors and animations for each section */
+               .section:nth-child(2) { 
+                   background-color: #ffebcd; /* Light peach background */
+                   color: #d2691e; /* Darker brown text color */
+                   animation: zoomIn 1.2s ease-out;
+               }
+               .section:nth-child(3) { 
+                   background-color: #e0f7fa; /* Light blue background */
+                   color: #00796b; /* Teal color for text */
+                   animation: slideInRight 1s ease-out;
+               }
+               .section:nth-child(4) { 
+                   background-color: #e8f5e9; /* Light green background */
+                   color: #388e3c; /* Dark green color for text */
+                   animation: zoomIn 1.5s ease-out;
+               }
+               .section:nth-child(5) { 
+                   background-color: #ffccbc; /* Light orange background */
+                   color: #d84315; /* Dark orange text color */
+                   animation: slideInLeft 1.3s ease-out;
+               }
+       
+               /* Call-to-action section styling */
+               .cta {
+                   text-align: center;
+                   padding: 20px;
+                   background-color: #d1c4e9; /* Light purple background */
+                   color: #512da8; /* Deep purple text */
+                   border-radius: 8px;
+                   font-size: 1.2em;
+                   margin-top: 20px;
+                   animation: fadeInUp 1.5s ease-out;
+               }
+       
+               /* Styling for CTA links */
+               .cta a {
+                   color: #7b1fa2;
+                   text-decoration: none;
+                   font-weight: bold;
+                   transition: color 0.3s;
+               }
+               .cta a:hover { 
+                   color: #4a148c; /* Darker purple on hover */
+               }
+       
+               /* Responsive styles for smaller screens */
+               @media (max-width: 768px) {
+                   h1 { font-size: 2em; } /* Smaller title on tablet */
+                   h2 { font-size: 1.6em; }
+                   h3 { font-size: 1.2em; }
+                   .container { width: 100%; padding: 10px; } /* Full-width container */
+               }
+               @media (max-width: 480px) {
+                   h1 { font-size: 1.8em; } /* Smaller title on mobile */
+                   h2 { font-size: 1.4em; }
+                   h3 { font-size: 1em; }
+               }
+       
+               /* Style for the 'Read Aloud' button */
+               .speech-btn {
+                   background-color: #4a90e2; /* Blue background color */
+                   color: #fff; /* White text */
+                   padding: 8px 16px;
+                   border: none;
+                   border-radius: 4px;
+                   cursor: pointer;
+                   margin-top: 10px;
+                   font-size: 1em;
+                   transition: transform 0.3s, background-color 0.3s;
+               }
+               .speech-btn:hover { 
+                   background-color: #357abd; /* Darker blue on hover */
+                   transform: scale(1.1); /* Slight scale-up on hover */
+               }
+       
+               /* Keyframe animations for various effects */
+               @keyframes fadeInDown {
+                   from { opacity: 0; transform: translateY(-20px); }
+                   to { opacity: 1; transform: translateY(0); }
+               }
+               @keyframes fadeIn {
+                   from { opacity: 0; }
+                   to { opacity: 1; }
+               }
+               @keyframes fadeInUp {
+                   from { opacity: 0; transform: translateY(20px); }
+                   to { opacity: 1; transform: translateY(0); }
+               }
+               @keyframes slideInLeft {
+                   from { opacity: 0; transform: translateX(-100%); }
+                   to { opacity: 1; transform: translateX(0); }
+               }
+               @keyframes slideInRight {
+                   from { opacity: 0; transform: translateX(100%); }
+                   to { opacity: 1; transform: translateX(0); }
+               }
+               @keyframes zoomIn {
+                   from { transform: scale(0.8); opacity: 0; }
+                   to { transform: scale(1); opacity: 1; }
+               }
+           /* the end about us css */
+           
+           /* START Search Container WITH CSS */
+/* Search Container */
+.search-container {
+      display: flex;
+      width: 100%;
+      /* max-width: 400px;
+      padding: 20px; */
+      border-radius: 10px;
+      background-color: green;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Search Box Styling */
+    .search-box {
+      display: flex;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      color: blue;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid RED;
+      border-radius: 5px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input[type="text"]:focus {
+      border-color: RED;
+    }
+
+    button {
+      padding: 10px;
+      margin-left: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #3498db;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: RED;
+    }
+
+    /* Message Box Styling */
+    .message-box {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 2px;
+      padding: 10px;
+      border-radius: 5px;
+      width: 100%;
+      text-align: center;
+      animation: rgbBlink 20s infinite; /* Apply RGB Blinking Animation */
+    }
+
+    .message-found {
+      color: white;
+    }
+
+    .message-not-found {
+      color: white;
+    }
+
+    /* Animation for Blinking Effect */
+    @keyframes blink {
+      0% {
+        background-color: red;
+        color: white;
+      }
+      50% {
+        background-color: transparent;
+        color: red;
+      }
+      100% {
+        background-color: red;
+        color: white;
+      }
+    }
+
+    /* Blinking RGB Animation for Message Box */
+    @keyframes rgbBlink {
+      0% {
+        background-color: rgb(255, 0, 0);  /* Red */
+      }
+      25% {
+        background-color: rgb(0, 255, 0);  /* Green */
+      }
+      50% {
+        background-color: rgb(0, 0, 255);  /* Blue */
+      }
+      75% {
+        background-color: rgb(255, 255, 0);  /* Yellow */
+      }
+      100% {
+        background-color: rgb(255, 0, 255);  /* Magenta */
+      }
+    }
+
+    /* Highlight Found Text */
+    .highlight {
+        height: auto;
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      animation: blink 20s infinite; /* Apply blinking effect */
+    }
+    /* The End Search Container */
+
+    /* START logo CSS*/
+    .logo-link {
+            display: inline-block;
+            text-decoration: none;
+            /* Removes underline */
+        }
+
+        /* Style the logo image */
+        .logo-link img {
+            width: 150px;
+            /* Adjust logo width */
+            height: auto;
+            transition: transform 0.3s ease;
+            /* Adds hover effect */
+        }
+
+        /* Hover effect */
+        .logo-link:hover img {
+            transform: scale(1.1);
+            /* Slightly enlarges logo on hover */
+        }
+        /* THE END logo CSS*/
+
+.sdb {
+    color: white;
+}
+
+/* start subscribe css */
+.subscribe {
+            text-align: center;
+            background-color: yellowgreen;
+            padding: 5px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 5px solid red;
+            animation: slideIn 1s ease-in-out;
+            max-width: 90%;
+            width: 400px;
+        }
+        .subscribe input[type="email"] {
+            padding: 15px;
+            width: 90%;
+            font-size: 16px;
+            border: 2px solid purple;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .subscribe input[type="email"]::placeholder {
+        color: red;
+        font-size: 20px;
+        opacity: 1; /* Ensure the color is fully visible */
+    }
+
+    /* Rest of your existing styles remain unchanged */
+
+        .subscribe input[type="email"]:focus {
+            border-color: #f66d9b;
+            box-shadow: 0 0 10px #f66d9b;
+            outline: none;
+        }
+        .subscribe button {
+            padding: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        .subscribe button:hover {
+            background-color: #f66d9b;
+        }
+        .subscribe .subscribe-message {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            font-size: 24px;
+            border-radius: 10px;
+            background-color: #4a90e2;
+            color: white;
+            animation: blink 1.5s infinite, fadeIn 1s;
+        }
+        @keyframes blink {
+            0% { background-color: #4a90e2; }
+            50% { background-color: #f66d9b; }
+            100% { background-color: #4a90e2; }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        @media (max-width: 600px) {
+            .subscribe {
+                padding: 20px;
+            }
+            .subscribe input[type="email"], .subscribe button {
+                font-size: 14px;
+                padding: 10px;
+            }
+            .subscribe .subscribe-message {
+                font-size: 18px;
+            }
+        }
+/* the end subscribe css */
+       
+           </style>
+
+</head>
+
+<body>
+    <div id="content">
+        <p>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i><a href="https://maps.app.goo.gl/WayNvhXdAj1BX6dBA" target="_blank">SUSTAINABILITY STARTUP, IT HUB NIZAMABAD, BYPASS ROAD.</a></small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>
+                        <a href="tel:+919848945713" target="_blank">+91 9848945713</a></small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i><a href="mailto:maheshwer.chowdeykari@gmail.com" target="_blank">maheshwer.chowdeykari@gmail.com</a>
+                    </small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/login/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/company/login"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.whatsapp.com/"><i class="fa-brands fa-square-whatsapp"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.youtube.com/"><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+<!--     /* START Search Container WITH HTML AND JAVASCRIPT */ --->
+<div class="search-container">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Type to search...">
+      <button onclick="performSiteSearch()">Search</button>
+    </div>
+  </div>
+
+  <!-- Message Box for Search Result -->
+  <div id="messageBox" class="message-box"></div>
+
+  <script>
+    // Perform search across the entire website content
+    function performSiteSearch() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const messageBox = document.getElementById('messageBox');
+      let found = false;
+
+      // Clear previous highlights in the entire document
+      clearPreviousHighlights();
+
+      if (searchTerm) {
+        // Create a regular expression to search the term in the entire document
+        const regex = new RegExp(`(${searchTerm})`, "gi");
+
+        // Search all text nodes in the document and highlight matches
+        const highlighted = highlightTextInDocument(regex);
+        
+        // Check if any matches are found by checking highlighted text nodes
+        found = highlighted > 0;
+      }
+
+      // Display result based on search findings
+      if (found) {
+        messageBox.innerHTML = `Found results for "${searchTerm}"`;
+        messageBox.className = 'message-box message-found';
+        speak(`Found results for ${searchTerm}`);
+      } else {
+        messageBox.innerHTML = "Sorry, your search results not found. Please try again. Thank you.";
+        messageBox.className = 'message-box message-not-found';
+        speak("Sorry, your search results not found. Please try again. OK, thank you.");
+      }
+    }
+
+    // Function to highlight text in the entire document
+    function highlightTextInDocument(regex) {
+      let highlightedCount = 0;
+      // Find all text nodes in the document
+      let textNodes = getTextNodes(document.body);
+      textNodes.forEach(node => {
+        let newHTML = node.nodeValue.replace(regex, function(match) {
+          highlightedCount++; // Count each highlight
+          return `<span class="highlight">${match}</span>`;
+        });
+        if (newHTML !== node.nodeValue) {
+          let span = document.createElement('span');
+          span.innerHTML = newHTML;
+          node.parentNode.replaceChild(span, node);
+        }
+      });
+      return highlightedCount;
+    }
+
+    // Get all text nodes within a given element
+    function getTextNodes(element) {
+      let textNodes = [];
+      let walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+      while (walker.nextNode()) {
+        textNodes.push(walker.currentNode);
+      }
+      return textNodes;
+    }
+
+    // Clear previous highlights across the entire document
+    function clearPreviousHighlights() {
+      const highlightedSpans = document.querySelectorAll('.highlight');
+      highlightedSpans.forEach(span => {
+        span.outerHTML = span.innerHTML; // Remove the span, keep the text
+      });
+    }
+
+    // Web Speech API for voice feedback
+    function speak(message) {
+      const speech = new SpeechSynthesisUtterance();
+      speech.text = message;
+      speech.volume = 1;
+      speech.rate = 1;
+      speech.pitch = 1;
+      window.speechSynthesis.speak(speech);
+    }
+  </script>
+
+    <!--     /* THE END Search Container WITH HTML AND JAVASCRIPT */ --->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            <a href="home.html" class="logo-link" title="Go to Homepage">
+                <img src="logo.png" alt="Company Logo">
+            </a>&nbsp;&nbsp;
+            <!--  /* THE END logo HTML*/ -->
+        <h1 class="sdb">SMART DUST BIN</h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="home.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link active">About</a>
+                    <a href="service.html" class="nav-item nav-link">Services</a>
+                    
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            
+                            <a href="feature.html" class="dropdown-item">Our features</a>
+                            <a href="team.html" class="dropdown-item">Team Members</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="quote.html" class="dropdown-item">Free suggestions</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+           </div>
+        </nav>
+
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">About Us</h1>
+                    <a href="" class="h5 text-white">Home</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="" class="h5 text-white">About</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
+                        <h1 class="mb-0">The Best Waste Management with IOT With 10 Years of Experience</h1>
+                    </div>
+                    <p class="mb-4">
+                        <div class="container">
+                            <h1>Clean and Green Waste Management with IoT</h1>
+                        
+                            <!-- Section: Introduction -->
+                            <div class="section" id="introduction">
+                                <h2>Introduction</h2>
+                                <p>Clean and Green Waste Management integrates IoT technology to improve waste management. Our mission is to create cleaner, healthier communities by enhancing waste collection, sorting, and disposal through smart technology, reducing environmental impact while promoting sustainability.</p>
+                                <button class="speech-btn" onclick="speakText('introduction')">Read Aloud</button>
+                            </div>
+                        
+                            <!-- Section: What We Do -->
+                            <div class="section" id="what-we-do">
+                                <h2>What We Do</h2>
+                                <h3>1. Smart Bin Monitoring</h3>
+                                <p>IoT sensors in waste bins detect fill levels, sending real-time alerts to prevent overflow and littering, ensuring bins are emptied when needed.</p>
+                        
+                                <h3>2. Route Optimization for Collection Vehicles</h3>
+                                <p>Optimized routes based on bin levels and traffic data save fuel, reduce costs, and minimize emissions from waste collection trucks.</p>
+                        
+                                <h3>3. Waste Segregation and Recycling</h3>
+                                <p>Our system uses smart segregation units to sort recyclable materials, supporting recycling efforts and reducing landfill waste.</p>
+                        
+                                <h3>4. Data Analytics and Reporting</h3>
+                                <p>Data from sensors and collection vehicles helps us identify trends, optimize resources, and minimize waste, supporting data-driven decisions.</p>
+                                <button class="speech-btn" onclick="speakText('what-we-do')">Read Aloud</button>
+                            </div>
+                        
+                            <!-- Section: Why Choose Us -->
+                            <div class="section" id="why-choose-us">
+                                <h2>Why Choose Us?</h2>
+                                <ul>
+                                    <li><strong>Sustainability:</strong> Reducing waste, emissions, and promoting recycling.</li>
+                                    <li><strong>Efficiency:</strong> Automated waste collection and optimized routes for cost-effective waste management.</li>
+                                    <li><strong>Innovation:</strong> Implementing data-driven, smart waste management solutions for cleaner communities.</li>
+                                </ul>
+                                <button class="speech-btn" onclick="speakText('why-choose-us')">Read Aloud</button>
+                            </div>
+                        
+                            <!-- Section: Environmental Impact -->
+                            <div class="section" id="environmental-impact">
+                                <h2>Environmental Impact</h2>
+                                <p>We aim to reduce the carbon footprint of waste collection, prevent pollution, and increase recycling rates through smart, data-driven approaches.</p>
+                                <button class="speech-btn" onclick="speakText('environmental-impact')">Read Aloud</button>
+                            </div>
+                        
+                            <!-- Call to Action -->
+                            <div class="cta">
+                                <p>Join us in making our planet cleaner and greener with IoT-driven waste management solutions!</p>
+                                <p><a href="#">Learn More</a> | <a href="#">Contact Us</a></p>
+                            </div>
+                        </div>
+                        
+                        <script>
+                            function speakText(sectionId) {
+                                const textContent = document.getElementById(sectionId).innerText;
+                                const speechSynthesisUtterance = new SpeechSynthesisUtterance(textContent);
+                                speechSynthesis.speak(speechSynthesisUtterance);
+                            }
+                        </script>
+                        
+    </div>
+    <!-- About End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Team Members</h5>
+                <h1 class="mb-0">Professional Stuffs Ready to Help Your Business</h1>
+            </div>
+            
+            
+            <div class="row g-5">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./img/MAAM.JPEG" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">SNEHITHA CHOWDARY</br>Chief Executive Officer (CEO)</h4>
+                              </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./IMG/CHMR.jpeg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">MAHESHWER CHOWDEYKARI</br>Chief Technology Officer</h4>
+                            </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./img/PREETHI.JPEG" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">PREETHI ADUSUMILLI </br>Head of Operations</h4>
+                            </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./IMG/tejasvini.jpeg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">TEJASWINI MANNE </br>IoT Solutions Manager</h4>
+                            </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./img/VASAVI_POHAR.jpeg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">VASAVI POHAR</br>Environmental Compliance Officer</h4>
+                                                </div>
+                    </div>
+                </div>
+                
+
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./IMG/BYNDLA_ASHWINI.JPEG" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">ASHWINI BYNDLA </br>Field Operations Supervisor</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./IMG/APRNA.JPEG" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">APARNA BASHAVOINA </br>Analytics Lead</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./IMG/JOHN.JPEG" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">JOHN SAMUEL MARWADI </br>IoT Technician</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./IMG/LAXMI.JPEG" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+            <div class="text-center py-4">
+                            <h4 class="text-primary">LAXMI GADDALE </br>Maintenance and Support Manager</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+            
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./IMG/SRIVIDYA_POKKULA.jpeg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+            <div class="text-center py-4">
+                            <h4 class="text-primary">SRIVIDYA POKKULA </br>Waste Collection Specialist</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./IMG/rahul_bijjala.jpeg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+            <div class="text-center py-4">
+                            <h4 class="text-primary">RAHUL BIJJALA </br>Waste Collection Specialist</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="./IMG/simhadri_nambi.jpeg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded" href="https://x.com/"><i
+                                        class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.facebook.com/login/"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.instagram.com/"><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-primary btn-lg-square rounded"
+                                    href="https://www.linkedin.com/company/login"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">SIMHADRI NAMBI</br>Customer Service Representative</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Vendor Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+                <div class="owl-carousel vendor-carousel">
+                    <img src="img/vendor-1.jpg" alt="">
+                    <img src="img/vendor-2.jpg" alt="">
+                    <img src="img/vendor-3.jpg" alt="">
+                    <img src="img/vendor-4.jpg" alt="">
+                    <img src="img/vendor-5.jpg" alt="">
+                    <img src="img/vendor-6.jpg" alt="">
+                    <img src="img/vendor-7.jpg" alt="">
+                    <img src="img/vendor-8.jpg" alt="">
+                    <img src="img/vendor-9.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+    
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-lg-4 col-md-6 footer-about">
+                    <div
+                        class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                        <!--  /* START logo HTML*/ -->
+                <a href="home.html" class="logo-link" title="Go to Homepage">
+                    <img src="logo.png" alt="Company Logo">
+                </a>&nbsp;&nbsp;
+                <!--  /* THE END logo HTML*/ -->
+            <h1 class="sdb">SMART DUST BIN</h1>
+
+                        <p class="mt-3 mb-4">
+                        <div class="section" id="introduction">
+                            <p>Clean and Green Waste Management uses IoT technology to optimize waste collection, sorting, and disposal. Our mission is to build healthier communities and promote sustainability by reducing environmental impact through smart waste solutions.</p>
+                            <button class="speech-btn" onclick="speakText('introduction')">Read Aloud</button>
+                        </div>
+                        </p>
+                        <form action="">
+                            <div class="input-group">
+                                <div class="subscribe">
+                                    <h2>Subscribe to Our Newsletter</h2>
+                                    <input type="email" class="subscribe" placeholder="Enter your email" id="subscribe" required>
+                                    <button class="subscribe" onclick="showMessage()">Sign Up</button>
+                                    <div class="subscribe-message" id="subscribeMessage">Thanks for subscribing!</div>
+                                </div>
+                            
+                                <script>
+                                    function showMessage() {
+                                        const emailInput = document.getElementById('subscribe');
+                                        const messageBox = document.getElementById('subscribeMessage');
+                                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            
+                                        if (!emailPattern.test(emailInput.value.trim())) {
+                                            alert("Please enter a valid email address.");
+                                            return;
+                                        }
+                                        
+                                        messageBox.style.display = 'block';
+                                        setTimeout(() => {
+                                            messageBox.style.display = 'none';
+                                            emailInput.value = ''; // Clear the input after showing message
+                                        }, 4000); // Message disappears after 4 seconds
+                                    }
+                                </script>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="row gx-5">
+                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Get In Touch</h3>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <small class="me-3 text-light"><a href="https://maps.app.goo.gl/WayNvhXdAj1BX6dBA"
+                                        target="_blank">SUSTAINABILITY START</br> IT HUB NIZAMABAD.</a></small>
+                            </div>
+
+                            <div class="d-flex mb-2">
+                                <!-- <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">maheshwer.chowdeykari@gmail.com</p> -->
+                                <small class="text-light"><i class="fa fa-envelope-open me-2"></i><a
+                                        href="mailto:maheshwer.chowdeykari@gmail.com"
+                                        target="_blank">maheshwer.chowdeykari@gmail.com</a></small>
+                            </div>
+                            <div class="d-flex mb-2">
+                                <!-- <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">+91 9848945713</p> -->
+                                <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>
+                                    <a href="tel:+919848945713" target="_blank">+91 9848945713</a></small>
+                            </div>
+                            <div class="d-flex mt-4">
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.facebook.com/login/" target="_blank"><i
+                                        class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.linkedin.com/company/login" target="_blank"><i
+                                        class="fab fa-linkedin-in fw-normal"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.whatsapp.com/" target="_blank"><i
+                                        class="fa-brands fa-whatsapp"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.instagram.com/" target="_blank"><i
+                                        class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
+                                    href="https://www.youtube.com/" target="_blank"><i
+                                        class="fab fa-youtube fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Quick Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="home.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="about.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light mb-2" href="service.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="team.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                                <!-- <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Trending Post</a> -->
+                                <a class="text-light" href="contact.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                            <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                                <h3 class="text-light mb-0">Popular Links</h3>
+                            </div>
+                            <div class="link-animated d-flex flex-column justify-content-start">
+                                <a class="text-light mb-2" href="home.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="about.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light mb-2" href="service.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="team.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                                <!-- <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Trending Post</a> -->
+                                <a class="text-light" href="contact.html"><i
+                                        class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white" style="background: #061429;">
+        <div class="container text-center">
+            <div class="row justify-content-end">
+                <div class="col-lg-8 col-md-6">
+                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy;SMART DUST BIN</a> 2024 All Rights Reserved. </br>
+
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            CREATED AND DESIGNED AND DEVELOPED BY MAHESHWER_CHOWDEYKARI,</br> SUSTAINABILITY STARTUP, IT
+                            HUB NIZAMABAD.</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="home.html" target="_blank" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i
+            class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    </p>
+    </div>
+</body>
+
+</html>

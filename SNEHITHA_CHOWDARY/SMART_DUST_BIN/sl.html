@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Signup and Login Page with Background Slideshow</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page Background */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-color: #1e1e1e;
+            position: relative;
+        }
+
+        /* Background GIF Slideshow Container */
+        .background-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        /* Background GIF Images */
+        .background-slideshow img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        /* Form Container */
+        .form-container {
+            background:rgba(255, 255, 255, 0.9);
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 5px solid;
+            border-image: linear-gradient(45deg, #ff4500, #ff6347, #48d1cc, #ffd700) 1;
+            animation: borderColorChange 2s infinite alternate;
+        }
+
+        /* Color Changing Border Animation */
+        @keyframes borderColorChange {
+            0% { border-color: #ff4500; }
+            25% { border-color: #ff6347; }
+            50% { border-color: #48d1cc; }
+            75% { border-color: #ffd700; }
+            100% { border-color: #ff4500; }
+        }
+
+        /* Form Header */
+        .form-header {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: textBlink 1s infinite;
+        }
+
+        /* Blinking Text Animation */
+        @keyframes textBlink {
+            0%, 100% { color: #333; }
+            50% { color: #ff4500; }
+        }
+
+        /* Input Fields */
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #333;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        /* Submit Button */
+        .form-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #48d1cc;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 1s;
+        }
+
+        .form-button:hover {
+            background-color: #20b2aa;
+        }
+
+        /* Toggle Link */
+        .toggle-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-style: italic;
+            color: #555;
+            cursor: pointer;
+        }
+
+        /* Hide Elements */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Slideshow -->
+    <div class="background-slideshow">
+        <!-- Add your GIF images here -->
+        <img src="s1.gif" class="bg-image" alt="Background GIF 1">
+        <img src="s2.gif" class="bg-image" alt="Background GIF 2">
+        <img src="s3.gif" class="bg-image" alt="Background GIF 3">
+        <img src="s4.gif" class="bg-image" alt="Background GIF 4">
+        <img src="s5.gif" class="bg-image" alt="Background GIF 5">
+        <img src="s6.gif" class="bg-image" alt="Background GIF 6">
+        <img src="s7.gif" class="bg-image" alt="Background GIF 7">
+        <img src="s8.gif" class="bg-image" alt="Background GIF 8">
+        <img src="s9.gif" class="bg-image" alt="Background GIF 9">
+        <img src="s10.gif" class="bg-image" alt="Background GIF 10">
+        <img src="s11.gif" class="bg-image" alt="Background GIF 11">
+        <img src="s12.gif" class="bg-image" alt="Background GIF 10">
+        <img src="s13.gif" class="bg-image" alt="Background GIF 11">
+        <img src="s14.gif" class="bg-image" alt="Background GIF 10">
+        <!-- Add more images as needed -->
+    </div>
+
+    <!-- Signup Form -->
+    <div class="form-container" id="signupForm">
+        <div class="form-header">Sign Up</div>
+        <input type="text" class="form-input" placeholder="Username" id="signupUsername" required>
+        <input type="email" class="form-input" placeholder="Email" id="signupEmail" required>
+        <input type="password" class="form-input" placeholder="Password" id="signupPassword" required>
+        <button class="form-button" onclick="handleSignup()">Sign Up</button>
+        <span class="toggle-link" onclick="toggleForm()">Already have an account? Log In</span>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container hidden" id="loginForm">
+        <div class="form-header">Log In</div>
+        <input type="text" class="form-input" placeholder="Username" id="loginUsername" required>
+        <input type="password" class="form-input" placeholder="Password" id="loginPassword" required>
+        <button class="form-button" onclick="handleLogin()">Log In</button>
+        <span class="toggle-link" onclick="toggleForm()">Don't have an account? Sign Up</span>
+    </div>
+
+    <script>
+        // Background Slideshow Functionality
+        const images = document.querySelectorAll('.bg-image');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].style.opacity = 0; // Hide current image
+            currentIndex = (currentIndex + 1) % images.length; // Move to next image
+            images[currentIndex].style.opacity = 1; // Show next image
+        }
+
+        // Change image every 5 seconds
+        setInterval(showNextImage, 5000);
+
+        // Toggle between Signup and Login Forms
+        function toggleForm() {
+            document.getElementById('signupForm').classList.toggle('hidden');
+            document.getElementById('loginForm').classList.toggle('hidden');
+        }
+
+        // Handle Signup Success
+        function handleSignup() {
+            const username = document.getElementById("signupUsername").value;
+            const email = document.getElementById("signupEmail").value;
+            const password = document.getElementById("signupPassword").value;
+
+            if (username && email && password) {
+                alert("Signup successful! Redirecting to login page.");
+                toggleForm(); // Show login form after signup
+            } else {
+                alert("Please fill out all fields.");
+            }
+        }
+
+        // Handle Login Success
+        function handleLogin() {
+            const username = document.getElementById("loginUsername").value;
+            const password = document.getElementById("loginPassword").value;
+
+            if (username && password) {
+                alert("Login successful! Redirecting to home page.");
+                window.location.href = "home.html"; // Redirect to home page on successful login
+            } else {
+                alert("Please fill out all fields.");
+            }
+        }
+    </script>
+</body>
+</html>
